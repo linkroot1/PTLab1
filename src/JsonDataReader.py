@@ -9,7 +9,6 @@ class JsonDataReader(DataReader):
         self.key: str = ""
         self.students: DataType = {}
 
-
     def read(self, path: str) -> DataType:
         with open(path, encoding='utf-8') as file:
             students_dict = json.load(file)
