@@ -11,7 +11,6 @@ from src.TextDataReader import TextDataReader
 class TestJsonDataReader:
     @pytest.fixture()
     def file_and_data_content(self) -> tuple[str, DataType]:
-
         text = "{\n" + \
                "  \"Иванов Иван Иванович\": {\n" + \
                "    \"математика\": 67,\n" + \
@@ -24,7 +23,6 @@ class TestJsonDataReader:
                "    \"социология\": 61\n" + \
                "  }\n" + \
                "}\n"
-
         data = {
             "Иванов Иван Иванович": [
                 ("математика", 67), ("литература", 100), ("программирование", 91)
