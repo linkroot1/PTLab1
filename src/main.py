@@ -17,13 +17,20 @@ def get_path_from_arguments(args) -> str:
 
 def main():
     path = get_path_from_arguments(sys.argv[1:])
-    # reader = TextDataReader()
-    reader = JsonDataReader()
-    students = reader.read(path)
-    print("Students: ", students)
-    # rating = CalcRating(students).calc()
-    excellentStudent = FindExcellentStudent(students).find()
-    print("Excellent student: ", excellentStudent)
+
+    type = path.split('.')
+    if type[-1] == "json":
+        reader = JsonDataReader()
+        students = reader.read(path)
+        print("Students: ", students)
+        excellentStudent = FindExcellentStudent(students).find()
+        print("Excellent student: ", excellentStudent)
+    elif type[-1] == "txt":
+        reader = TextDataReader()
+        students = reader.read(path)
+        print("Students: ", students)
+        rating = CalcRating(students).calc()
+        print("raiting: ", rating)
 
 
 if __name__ == "__main__":
